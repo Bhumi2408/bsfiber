@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold: #ce983b;
+  --color-gold-light: #e2b76d;
+  --color-gold-pale: #f5e6d6;
+  --color-sand: #e2d5bd;
+  --color-cream: #f8f6f1;
+  --color-beige: #f6f2ed;
+  --color-tan: #c5ad97;
+  --color-rose: #a37b7b;
+  --color-bronze: #a87c57;
+  --color-heading: #192a3d;
+  --color-body: #3a4f66;
+
+  --font-playfair: var(--font-playfair-display);
+  --font-lato: var(--font-lato-sans);
+  --font-roboto: var(--font-roboto-sans);
+  --font-roboto-slab: var(--font-roboto-slab-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fafbfc;
+  color: var(--color-body);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* Scroll reveal animations (zoomIn / fadeIn / fadeInUp / slideInUp) */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal[data-anim="zoom"] {
+  transform: scale(0.85);
+}
+.reveal[data-anim="fade-up"] {
+  transform: translateY(40px);
+}
+.reveal[data-anim="slide-up"] {
+  transform: translateY(100px);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
 }
